@@ -1,26 +1,176 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Courier Prime';
+  src:
+    url('https://fonts.gstatic.com/s/courierPrime/v14/L0x5DF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM.woff2')
+      format('woff2'),
+    url('https://fonts.gstatic.com/s/courierPrime/v14/L0x5DF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM.woff')
+      format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Courier Prime';
+  src:
+    url('https://fonts.gstatic.com/s/courierPrime/v14/L0xiDF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM_KxfaA.woff2')
+      format('woff2'),
+    url('https://fonts.gstatic.com/s/courierPrime/v14/L0xiDF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM_KxfaA.woff')
+      format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src:
+    url('https://fonts.gstatic.com/s/spacemono/v13/YW2hl_y0JuNvR4DBUeSz6IjY8eM.woff2')
+      format('woff2'),
+    url('https://fonts.gstatic.com/s/spacemono/v13/YW2hl_y0JuNvR4DBUeSz6IjY8eM.woff')
+      format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src:
+    url('https://fonts.gstatic.com/s/spacemono/v13/YW2il_y0JuNvR4DBUeSz6IjY8eOGX8JbFA.woff2')
+      format('woff2'),
+    url('https://fonts.gstatic.com/s/spacemono/v13/YW2il_y0JuNvR4DBUeSz6IjY8eOGX8JbFA.woff')
+      format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #000000;
+  --text-primary: #ffffff;
+  --bg-inverted: #ffffff;
+  --text-inverted: #000000;
+  --neon-magenta: #ff00ff;
+  --neon-cyan: #00ffff;
+  --border-color: #ffffff;
+}
+
+body.inverted {
+  --bg-primary: #ffffff;
+  --text-primary: #000000;
+  --border-color: #000000;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-heading: "Courier Prime", monospace;
+  --font-body: "Space Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  transition:
+    background-color 0.8s ease-in-out,
+    color 0.8s ease-in-out;
+  overflow-x: hidden;
+}
+
+/* Brutalism Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+}
+h2 {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+}
+h3 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+h4 {
+  font-size: 1.25rem;
+}
+
+/* Grid Background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+body.inverted .grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+/* Brutalist Buttons */
+.btn-neon {
+  border: 2px solid var(--neon-magenta);
+  color: var(--neon-magenta);
+  background: transparent;
+  padding: 12px 24px;
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+  background: var(--neon-magenta);
+  color: var(--bg-primary);
+  box-shadow: 0 0 20px var(--neon-magenta);
+}
+
+/* Section Spacing */
+section {
+  padding: 80px 48px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 24px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
 }

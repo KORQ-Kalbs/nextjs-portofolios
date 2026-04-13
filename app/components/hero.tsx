@@ -1,84 +1,65 @@
-"use client";
+'use client';
+
+import PixelArt from './pixel-art';
+import { useEffect } from 'react';
+import { animateHeroText, animateHeroDescription, animateScrollChevron, animateHeroVisual } from '@/app/lib/gsap-animations';
 
 export default function Hero() {
+  useEffect(() => {
+    animateHeroText();
+    animateHeroDescription();
+    animateScrollChevron();
+    animateHeroVisual();
+  }, []);
+
   return (
     <section
-      id="home"
-      className="relative min-h-screen w-full flex items-center justify-center px-6 pt-20 overflow-hidden"
+      id="hero-section"
+      className="relative min-h-screen w-full bg-black text-white pt-32 pb-20 grid-bg overflow-hidden"
     >
-      {/* Animated Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/20 to-black pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-12 h-full flex flex-col justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Column - Text */}
+          <div className="space-y-8">
+            {/* Main Heading */}
+            <h1 className="hero-heading text-5xl lg:text-7xl font-heading font-bold tracking-tighter">
+              KAFKHA YASIN ALBIAN
+            </h1>
 
-      {/* Animated Grid Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
-      </div>
+            {/* Subtitle */}
+            <p className="text-2xl lg:text-3xl font-heading font-bold uppercase tracking-widest text-white/80">
+              WEB DEVELOPER & DESIGNER
+            </p>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
-        {/* Main Title */}
-        <div className="space-y-4">
-          <h1 className="text-6xl md:text-7xl font-bold text-white leading-tight">
-            Hey, I'm{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-              Kafkha
-            </span>
-          </h1>
-          <p className="text-2xl md:text-3xl font-light text-gray-300">
-            Web Developer & Designer
-          </p>
-        </div>
+            {/* Description */}
+            <p className="hero-description max-w-md text-base leading-relaxed text-white/70 border-l-2 border-white pl-6">
+              I build bold digital experiences with modern technologies. Passionate about creating
+              interactive interfaces with obsessive attention to detail.
+            </p>
 
-        {/* Description */}
-        <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          I build exceptional digital experiences with modern technologies.
-          Passionate about creating beautiful, interactive interfaces with
-          smooth animations and great performance.
-        </p>
+            {/* CTA Button */}
+            <div className="pt-6">
+              <a
+                href="#projects-section"
+                className="btn-neon inline-block hover:shadow-[0_0_30px_#ff00ff]"
+              >
+                VIEW WORK →
+              </a>
+            </div>
+          </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-          <a
-            href="#work"
-            className="group px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105"
-          >
-            View My Work
-            <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
-              →
-            </span>
-          </a>
-          <a
-            href="#contact"
-            className="px-8 py-3 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/5 hover:border-white/40 transition-all duration-300"
-          >
-            Get in Touch
-          </a>
+          {/* Right Column - Pixel Art */}
+          <div className="hero-visual hidden lg:block">
+            <PixelArt />
+          </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center gap-2">
-            <p className="text-sm text-gray-400">Scroll to explore</p>
-            <svg
-              className="w-5 h-5 text-cyan-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </div>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2">
+          <p className="text-xs font-bold tracking-widest uppercase text-white/50">SCROLL</p>
+          <div className="scroll-chevron text-white/50">↓</div>
         </div>
       </div>
-
-      {/* Floating Elements (Background Decoration) */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl opacity-20 pointer-events-none" />
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-cyan-600/20 rounded-full blur-3xl opacity-20 pointer-events-none" />
     </section>
   );
 }

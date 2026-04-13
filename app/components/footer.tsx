@@ -1,6 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCubes } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 export default function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -10,86 +13,63 @@ export default function Footer() {
       setShowScrollTop(window.scrollY > 300);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="relative w-full py-12 px-6 bg-black border-t border-white/10">
-      {/* Grid Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:50px_50px] opacity-5" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+    <footer className="relative w-full bg-black text-white border-t-2 border-white">
+      <div className="max-w-7xl mx-auto px-12 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <h3 className="text-xl font-heading font-bold tracking-widest uppercase flex items-center gap-2">
+              <FontAwesomeIcon icon={faCubes} className="text-[#ff00ff]" />
               KAFKHA
             </h3>
-            <p className="text-gray-400 text-sm">
-              Web developer & designer building exceptional digital experiences.
+            <p className="text-xs font-body text-white/60 leading-relaxed">
+              Digital brutalism meets interactive design. Building bold web experiences.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-white font-semibold text-sm">Navigation</h4>
-            <ul className="space-y-2 text-gray-400 text-sm">
+            <h4 className="text-sm font-bold tracking-widest uppercase">NAVIGATION</h4>
+            <ul className="space-y-2 text-xs text-white/60">
               <li>
-                <a
-                  href="#home"
-                  className="hover:text-cyan-400 transition-colors"
-                >
-                  Home
+                <a href="#hero-section" className="hover:text-[#ff00ff] transition">
+                  HOME
                 </a>
               </li>
               <li>
-                <a
-                  href="#work"
-                  className="hover:text-cyan-400 transition-colors"
-                >
-                  Work
+                <a href="#projects-section" className="hover:text-[#ff00ff] transition">
+                  WORK
                 </a>
               </li>
               <li>
-                <a
-                  href="#skills"
-                  className="hover:text-cyan-400 transition-colors"
-                >
-                  Skills
+                <a href="#skills-section" className="hover:text-[#ff00ff] transition">
+                  SKILLS
                 </a>
               </li>
               <li>
-                <a
-                  href="#about"
-                  className="hover:text-cyan-400 transition-colors"
-                >
-                  About
+                <a href="#about-section" className="hover:text-[#ff00ff] transition">
+                  ABOUT
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Social Links */}
+          {/* Social */}
           <div className="space-y-4">
-            <h4 className="text-white font-semibold text-sm">Social</h4>
-            <ul className="space-y-2 text-gray-400 text-sm">
+            <h4 className="text-sm font-bold tracking-widest uppercase">SOCIAL</h4>
+            <ul className="space-y-2 text-xs text-white/60">
               <li>
-                <a
-                  href="https://github.com/KORQ-Kalbs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-cyan-400 transition-colors"
-                >
-                  GitHub
+                <a href="https://github.com/KORQ-Kalbs" target="_blank" rel="noopener noreferrer" className="hover:text-[#ff00ff] transition">
+                  GITHUB
                 </a>
               </li>
               <li>
@@ -97,73 +77,45 @@ export default function Footer() {
                   href="https://linkedin.com/in/kafkha-yasin-albian-676b42369/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-[#ff00ff] transition"
                 >
-                  LinkedIn
+                  LINKEDIN
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:Korqsz@proton.me"
-                  className="hover:text-cyan-400 transition-colors"
-                >
-                  Email
+                <a href="mailto:Korqsz@proton.me" className="hover:text-[#ff00ff] transition">
+                  EMAIL
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Contact CTA */}
+          {/* Contact */}
           <div className="space-y-4">
-            <h4 className="text-white font-semibold text-sm">Get In Touch</h4>
-            <p className="text-gray-400 text-sm">
-              Interested in working together? Send me an email!
-            </p>
-            <a
-              href="#contact"
-              className="inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-sm font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
-            >
-              Contact Me
+            <h4 className="text-sm font-bold tracking-widest uppercase">CONTACT</h4>
+            <p className="text-xs text-white/60">Have a project in mind? Let's collaborate.</p>
+            <a href="#contact-section" className="btn-neon inline-block text-xs">
+              GET IN TOUCH
             </a>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/10 mb-8" />
+        <div className="border-t-2 border-white/10 my-8" />
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          {/* Copyright */}
-          <p className="text-gray-500 text-sm text-center md:text-left">
-            © 2024 Kafkha Yasin Albian. All rights reserved.
-          </p>
+          <p className="text-xs font-body text-white/50">© 2024 KAFKHA YASIN ALBIAN. ALL RIGHTS RESERVED.</p>
+          <p className="text-xs font-body text-white/50">BUILT WITH NEXT.JS • TAILWIND • GSAP</p>
 
-          {/* Made with */}
-          <p className="text-gray-500 text-sm text-center">
-            Made with <span className="text-cyan-400">✨</span> using Next.js,
-            React, TailwindCSS & GSAP
-          </p>
-
-          {/* Scroll to Top Button */}
+          {/* Scroll to Top */}
           {showScrollTop && (
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-all duration-300 hover:scale-110"
+              className="p-3 border-2 border-white hover:bg-[#ff00ff] hover:border-[#ff00ff] transition-all"
               aria-label="Scroll to top"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 10l7-7m0 0l7 7m-7-7v18"
-                />
-              </svg>
+              <FontAwesomeIcon icon={faArrowUp} />
             </button>
           )}
         </div>
