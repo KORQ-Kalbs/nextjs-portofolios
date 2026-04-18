@@ -9,7 +9,7 @@ import {
 const skillCategories = {
   advanced: ["HTML", "CSS", "TAILWINDCSS", "BOOTSTRAP", "PHP"],
   intermediate: ["LARAVEL", "JAVASCRIPT", "REACT"],
-  beginner: ["VUE.JS", "NEXT.JS", "NODE.JS", "GSAP"],
+  beginner: ["NEXT.JS", "GSAP"],
   tools: [
     "GITHUB",
     "NPM",
