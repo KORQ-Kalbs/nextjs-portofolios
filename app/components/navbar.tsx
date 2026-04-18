@@ -1,25 +1,29 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faBars, faX, faCubes } from '@fortawesome/free-solid-svg-icons';
+import Link from "next/link";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faBars, faX, faCubes } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: 'WORK', href: '#projects-section' },
-    { label: 'ABOUT', href: '#about-section' },
-    { label: 'CONTACT', href: '#contact-section' },
+    { label: "WORK", href: "#projects-section" },
+    { label: "SKILLS", href: "#skills-section" },
+    { label: "ABOUT", href: "#about-section" },
+    { label: "CONTACT", href: "#contact-section" },
   ];
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-black border-b-2 border-white">
       <div className="max-w-7xl mx-auto px-12 py-6 flex justify-between items-center">
         {/* Logo - FontAwesome */}
-        <Link href="/" className="text-2xl font-bold font-heading tracking-widest hover:opacity-70 transition flex items-center gap-2">
+        <Link
+          href="/"
+          className="text-2xl font-bold font-heading tracking-widest hover:opacity-70 transition flex items-center gap-2"
+        >
           <FontAwesomeIcon icon={faCubes} className="text-[#ff00ff]" />
           KAFKHA
         </Link>

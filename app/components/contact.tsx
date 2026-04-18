@@ -1,20 +1,18 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { animateContactCTA } from '@/app/lib/gsap-animations';
+import { useEffect, useState } from "react";
+import { animateContactCTA } from "@/app/lib/gsap-animations";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
-  useEffect(() => {
-    animateContactCTA();
-  }, []);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -25,18 +23,25 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const mailtoLink = `mailto:Korqsz@proton.me?subject=Message from ${formData.name}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
     )}`;
     window.location.href = mailtoLink;
   };
 
   return (
-    <section id="contact-section" className="relative min-h-screen w-full bg-white text-black py-20 grid-bg flex items-center">
+    <section
+      id="contact-section"
+      className="relative min-h-screen w-full bg-white text-black py-20 grid-bg-dark flex flex-col items-center justify-center"
+    >
       <div className="max-w-2xl mx-auto px-12 w-full">
         {/* Title */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl lg:text-6xl font-heading font-bold tracking-tight mb-4">LET'S CREATE</h2>
-          <p className="text-lg font-heading tracking-wide uppercase text-black/60">SOMETHING TOGETHER</p>
+          <h2 className="text-5xl lg:text-6xl font-heading font-bold tracking-tight mb-4">
+            LET'S CREATE
+          </h2>
+          <p className="text-lg font-heading tracking-wide uppercase text-black/60">
+            SOMETHING TOGETHER
+          </p>
         </div>
 
         {/* Email CTA */}
@@ -56,7 +61,9 @@ export default function Contact() {
         {/* Contact Form */}
         <form onSubmit={handleSubmit} className="space-y-6 mb-16">
           <div>
-            <label className="text-xs font-bold tracking-widest uppercase text-black/50 block mb-2">NAME</label>
+            <label className="text-xs font-bold tracking-widest uppercase text-black/50 block mb-2">
+              NAME
+            </label>
             <input
               type="text"
               name="name"
@@ -69,7 +76,9 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="text-xs font-bold tracking-widest uppercase text-black/50 block mb-2">EMAIL</label>
+            <label className="text-xs font-bold tracking-widest uppercase text-black/50 block mb-2">
+              EMAIL
+            </label>
             <input
               type="email"
               name="email"
@@ -82,7 +91,9 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="text-xs font-bold tracking-widest uppercase text-black/50 block mb-2">MESSAGE</label>
+            <label className="text-xs font-bold tracking-widest uppercase text-black/50 block mb-2">
+              MESSAGE
+            </label>
             <textarea
               name="message"
               value={formData.message}

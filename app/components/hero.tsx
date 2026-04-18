@@ -1,17 +1,14 @@
-'use client';
+"use client";
 
-import PixelArt from './pixel-art';
-import { useEffect } from 'react';
-import { animateHeroText, animateHeroDescription, animateScrollChevron, animateHeroVisual } from '@/app/lib/gsap-animations';
+import { useEffect } from "react";
+import {
+  animateHeroText,
+  animateHeroDescription,
+  animateScrollChevron,
+  animateHeroVisual,
+} from "@/app/lib/gsap-animations";
 
 export default function Hero() {
-  useEffect(() => {
-    animateHeroText();
-    animateHeroDescription();
-    animateScrollChevron();
-    animateHeroVisual();
-  }, []);
-
   return (
     <section
       id="hero-section"
@@ -33,8 +30,9 @@ export default function Hero() {
 
             {/* Description */}
             <p className="hero-description max-w-md text-base leading-relaxed text-white/70 border-l-2 border-white pl-6">
-              I build bold digital experiences with modern technologies. Passionate about creating
-              interactive interfaces with obsessive attention to detail.
+              I build bold digital experiences with modern technologies.
+              Passionate about creating interactive interfaces with obsessive
+              attention to detail.
             </p>
 
             {/* CTA Button */}
@@ -48,16 +46,10 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column - Pixel Art */}
-          <div className="hero-visual hidden lg:block">
-            <PixelArt />
+          {/* Right Column - Container for visual balance */}
+          <div className="hidden lg:block relative h-96">
+            {/* The PixelArt component has been moved to global wrapper to float across sections */}
           </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2">
-          <p className="text-xs font-bold tracking-widest uppercase text-white/50">SCROLL</p>
-          <div className="scroll-chevron text-white/50">↓</div>
         </div>
       </div>
     </section>

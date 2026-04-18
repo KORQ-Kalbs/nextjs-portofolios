@@ -1,45 +1,45 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Courier Prime';
+  font-family: "Courier Prime";
   src:
-    url('https://fonts.gstatic.com/s/courierPrime/v14/L0x5DF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM.woff2')
-      format('woff2'),
-    url('https://fonts.gstatic.com/s/courierPrime/v14/L0x5DF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM.woff')
-      format('woff');
+    url("https://fonts.gstatic.com/s/courierPrime/v14/L0x5DF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM.woff2")
+      format("woff2"),
+    url("https://fonts.gstatic.com/s/courierPrime/v14/L0x5DF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM.woff")
+      format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Courier Prime';
+  font-family: "Courier Prime";
   src:
-    url('https://fonts.gstatic.com/s/courierPrime/v14/L0xiDF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM_KxfaA.woff2')
-      format('woff2'),
-    url('https://fonts.gstatic.com/s/courierPrime/v14/L0xiDF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM_KxfaA.woff')
-      format('woff');
+    url("https://fonts.gstatic.com/s/courierPrime/v14/L0xiDF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM_KxfaA.woff2")
+      format("woff2"),
+    url("https://fonts.gstatic.com/s/courierPrime/v14/L0xiDF02ePBWGLEVI-nK-B1yt1FCt3Gy6_cM_KxfaA.woff")
+      format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Space Mono';
+  font-family: "Space Mono";
   src:
-    url('https://fonts.gstatic.com/s/spacemono/v13/YW2hl_y0JuNvR4DBUeSz6IjY8eM.woff2')
-      format('woff2'),
-    url('https://fonts.gstatic.com/s/spacemono/v13/YW2hl_y0JuNvR4DBUeSz6IjY8eM.woff')
-      format('woff');
+    url("https://fonts.gstatic.com/s/spacemono/v13/YW2hl_y0JuNvR4DBUeSz6IjY8eM.woff2")
+      format("woff2"),
+    url("https://fonts.gstatic.com/s/spacemono/v13/YW2hl_y0JuNvR4DBUeSz6IjY8eM.woff")
+      format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Space Mono';
+  font-family: "Space Mono";
   src:
-    url('https://fonts.gstatic.com/s/spacemono/v13/YW2il_y0JuNvR4DBUeSz6IjY8eOGX8JbFA.woff2')
-      format('woff2'),
-    url('https://fonts.gstatic.com/s/spacemono/v13/YW2il_y0JuNvR4DBUeSz6IjY8eOGX8JbFA.woff')
-      format('woff');
+    url("https://fonts.gstatic.com/s/spacemono/v13/YW2il_y0JuNvR4DBUeSz6IjY8eOGX8JbFA.woff2")
+      format("woff2"),
+    url("https://fonts.gstatic.com/s/spacemono/v13/YW2il_y0JuNvR4DBUeSz6IjY8eOGX8JbFA.woff")
+      format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -125,10 +125,31 @@ h4 {
   background-size: 50px 50px;
 }
 
+.grid-bg-light {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.grid-bg-dark {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
 body.inverted .grid-bg {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+.about-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
 /* Brutalist Buttons */

@@ -1,32 +1,39 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { animateSkillItems, animateFloatingBadges } from '@/app/lib/gsap-animations';
+import { useEffect } from "react";
+import {
+  animateSkillItems,
+  animateFloatingBadges,
+} from "@/app/lib/gsap-animations";
 
 const skillCategories = {
-  advanced: ['HTML', 'CSS', 'TAILWINDCSS', 'BOOTSTRAP', 'PHP'],
-  intermediate: ['LARAVEL', 'JAVASCRIPT', 'NODE.JS', 'ALPINE.JS'],
-  beginner: ['VUE.JS', 'REACT', 'NEXT.JS'],
-  tools: ['GITHUB', 'NPM', 'MYSQL', 'VS CODE', 'COMPOSER'],
+  advanced: ["HTML", "CSS", "TAILWINDCSS", "BOOTSTRAP", "PHP"],
+  intermediate: ["LARAVEL", "JAVASCRIPT", "REACT"],
+  beginner: ["VUE.JS", "NEXT.JS", "NODE.JS", "GSAP"],
+  tools: [
+    "GITHUB",
+    "NPM",
+    "MYSQL",
+    "VS CODE",
+    "COMPOSER",
+    "PGSQL",
+    "FIGMA",
+    "UNITY",
+  ],
 };
 
 export default function Skills() {
-  useEffect(() => {
-    // Wait for DOM to be ready
-    const timer = setTimeout(() => {
-      animateSkillItems();
-      animateFloatingBadges();
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <section id="skills-section" className="relative min-h-screen w-full bg-white text-black py-20 grid-bg">
+    <section
+      id="skills-section"
+      className="relative min-h-screen w-full bg-white text-black py-20 grid-bg-dark"
+    >
       <div className="max-w-7xl mx-auto px-12">
         {/* Section Title */}
         <div className="mb-20 space-y-4">
-          <h2 className="text-5xl lg:text-6xl font-heading font-bold tracking-tight">TECH STACK</h2>
+          <h2 className="text-5xl lg:text-6xl font-heading font-bold tracking-tight">
+            TECH STACK
+          </h2>
           <div className="border-t-2 border-black w-32" />
         </div>
 
@@ -39,7 +46,10 @@ export default function Skills() {
             </h3>
             <div className="space-y-3">
               {skillCategories.advanced.map((skill) => (
-                <div key={skill} className="skill-item text-sm font-body text-black/80 flex items-start gap-2">
+                <div
+                  key={skill}
+                  className="skill-item text-sm font-body text-black/80 flex items-start gap-2"
+                >
                   <span className="text-black font-bold">●</span>
                   <span className="font-bold tracking-wide">{skill}</span>
                 </div>
@@ -54,7 +64,10 @@ export default function Skills() {
             </h3>
             <div className="space-y-3">
               {skillCategories.intermediate.map((skill) => (
-                <div key={skill} className="skill-item text-sm font-body text-black/80 flex items-start gap-2">
+                <div
+                  key={skill}
+                  className="skill-item text-sm font-body text-black/80 flex items-start gap-2"
+                >
                   <span className="text-black font-bold">●</span>
                   <span className="font-bold tracking-wide">{skill}</span>
                 </div>
@@ -69,7 +82,10 @@ export default function Skills() {
             </h3>
             <div className="space-y-3">
               {skillCategories.beginner.map((skill) => (
-                <div key={skill} className="skill-item text-sm font-body text-black/80 flex items-start gap-2">
+                <div
+                  key={skill}
+                  className="skill-item text-sm font-body text-black/80 flex items-start gap-2"
+                >
                   <span className="text-black font-bold">●</span>
                   <span className="font-bold tracking-wide">{skill}</span>
                 </div>
@@ -84,7 +100,10 @@ export default function Skills() {
             </h3>
             <div className="space-y-3">
               {skillCategories.tools.map((tool) => (
-                <div key={tool} className="skill-item text-sm font-body text-black/80 flex items-start gap-2">
+                <div
+                  key={tool}
+                  className="skill-item text-sm font-body text-black/80 flex items-start gap-2"
+                >
                   <span className="text-black font-bold">●</span>
                   <span className="font-bold tracking-wide">{tool}</span>
                 </div>
@@ -95,8 +114,11 @@ export default function Skills() {
 
         {/* Floating Badges - Scattered */}
         <div className="relative h-48 mb-20">
-          <div className="floating-badge absolute top-10 left-20 px-4 py-2 border-2 border-black text-xs font-bold tracking-widest uppercase">
-            CURRENTLY MASTERING
+          <div className="floating-badge absolute top-2 left-50 px-4 py-2 border-2 border-black text-black text-xs font-bold tracking-widest uppercase">
+            Currently Learning
+          </div>
+          <div className="floating-badge absolute top-10 right-100 px-4 py-2 border-2 border-[#f61500] text-[#f61500] text-xs font-bold tracking-widest uppercase">
+            Laravel
           </div>
           <div className="floating-badge absolute top-32 right-32 px-4 py-2 border-2 border-[#ff00ff] text-[#ff00ff] text-xs font-bold tracking-widest uppercase">
             REACT
@@ -109,9 +131,14 @@ export default function Skills() {
         {/* Focus Area */}
         <div className="border-2 border-black p-8 bg-white">
           <p className="text-sm leading-relaxed">
-            <span className="font-bold tracking-widest uppercase">▪ PRIMARY FOCUS ▪</span>
+            <span className="font-bold tracking-widest uppercase">
+              ▪ PRIMARY FOCUS ▪
+            </span>
             <br />
-            Expanding frontend expertise with React and Next.js. Building production-ready applications with modern JavaScript frameworks and optimization best practices.
+            Expanding frontend expertise, and experience with React,
+            TailwindCSS, GSAP, and Next.js. Building production-ready
+            applications with modern JavaScript frameworks and optimization best
+            practices.
           </p>
         </div>
       </div>
