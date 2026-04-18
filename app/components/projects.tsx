@@ -8,10 +8,11 @@ import { link } from "fs";
 const projects = [
   {
     id: 1,
-    slug: "toko-imaji",
-    title: "TOKO IMAJI",
-    subtitle: "E-COMMERCE PLATFORM",
-    tech: ["PHP", "MYSQL", "BOOTSTRAP"],
+    slug: "yellow-drink",
+    title: "YELLOW DRINK",
+    subtitle: "POS SYSTEM",
+    tech: ["LARAVEL", "MYSQL", "TAILWINDCSS"],
+    link: "",
   },
   {
     id: 2,
@@ -23,10 +24,11 @@ const projects = [
   },
   {
     id: 3,
-    slug: "music-verse",
-    title: "MUSIC VERSE",
-    subtitle: "MUSIC SHOWCASE",
-    tech: ["PHP", "TAILWINDCSS", "ALPINE.JS"],
+    slug: "arcloom",
+    title: "ARCLOOM",
+    subtitle: "ERD & PRD APPLICATION",
+    tech: ["LARAVEL", "TAILWINDCSS", "MERMAIDJS", "REACT", "PGSQL"],
+    link: "",
   },
   {
     id: 4,
@@ -46,10 +48,11 @@ const projects = [
   },
   {
     id: 6,
-    slug: "whos-note",
-    title: "WHO'S NOTE?",
-    subtitle: "NOTE APPLICATION",
-    tech: ["PHP", "TAILWINDCSS"],
+    slug: "collect-stars-game",
+    title: "COLLECT STARS GAME",
+    subtitle: "INTERACTIVE GAME",
+    tech: ["UNITY", "C++"],
+    link: "https://play.unity.com/en/games/3d8bb510-ef2f-4d7d-a6ae-ee02276f0d1f/website-kafff",
   },
 ];
 
