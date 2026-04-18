@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { animateContactCTA } from "@/app/lib/gsap-animations";
+import { useState } from "react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,9 +9,9 @@ export default function Contact() {
     message: "",
   });
 
-  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -31,15 +30,13 @@ export default function Contact() {
     setError("");
 
     try {
-      const response = await fetch("/api/send-email", {
+      const response = await fetch("https://formspree.io/f/mkokrddj", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
-      const result = await response.json();
 
       if (response.ok) {
         setSubmitted(true);
@@ -49,7 +46,7 @@ export default function Contact() {
           setSubmitted(false);
         }, 5000);
       } else {
-        setError(result.error || "Failed to send message. Please try again.");
+        setError("Failed to send message. Please try again.");
       }
     } catch (err) {
       setError("An error occurred. Please try again later.");
